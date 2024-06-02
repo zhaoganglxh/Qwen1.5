@@ -253,17 +253,16 @@ tool_result = execute_plugin_from_react_output(response)
 # print(tool_result)
 
 response += " " + str(tool_result)
-# print(response)
+response += " " + "\n" + query
 
 response, history = model.chat(tokenizer, response, history=history,
                               stop_words_ids=react_stop_words)
-#print(response)
-
-response, history = model.chat(tokenizer, response, history=history,
-                              stop_words_ids=react_stop_words)
-#print(response)
 
 tool_result = execute_plugin_from_react_output(response)
 
 response += " " + str(tool_result)
+
+response, history = model.chat(tokenizer, response, history=history,
+                              stop_words_ids=react_stop_words)
+
 print(response)
