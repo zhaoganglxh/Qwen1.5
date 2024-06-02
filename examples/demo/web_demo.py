@@ -12,7 +12,7 @@ import gradio as gr
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextIteratorStreamer
 
-DEFAULT_CKPT_PATH = 'Qwen/Qwen1.5-7B-Chat'
+DEFAULT_CKPT_PATH = '/media/zhaogang/4T2-2(大语言模型)/HuggingFace/models/qwen/Qwen1___5-7B-Chat'
 
 
 def _get_args():

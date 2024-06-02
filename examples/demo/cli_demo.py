@@ -16,7 +16,8 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextIteratorStreamer
 from transformers.trainer_utils import set_seed
 
-DEFAULT_CKPT_PATH = 'Qwen/Qwen1.5-7B-Chat'
+DEFAULT_CKPT_PATH = '/media/zhaogang/4T2-2(大语言模型)/HuggingFace/models/qwen/Qwen1___5-7B-Chat'
+#DEFAULT_CKPT_PATH = '/media/zhaogang/4T2-2(大语言模型)/HuggingFace/models/qwen/Qwen1___5-7B-Chat-GPTQ-Int8'
 
 _WELCOME_MSG = '''\
 Welcome to use Qwen1.5-Chat model, type text to start chat, type :h to show command help.
@@ -80,7 +81,7 @@ def _load_model_tokenizer(args):
         args.checkpoint_path,
         torch_dtype="auto",
         device_map=device_map,
-        resume_download=True,
+        resume_download=True
     ).eval()
     model.generation_config.max_new_tokens = 2048    # For chat.
 

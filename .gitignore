@@ -1,2 +1,4 @@
 # Sphinx documentation
 docs/_build/
+.idea/
+.ipynb_checkpoints/
